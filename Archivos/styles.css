@@ -1,4 +1,4 @@
-#more {display: none;}
+#moreTextPresentacion {display: none;}
 
 nav{
     display: flex;
@@ -30,4 +30,3 @@ nav{
 .links ul li {
     margin-right: 20px; 
 }
-
