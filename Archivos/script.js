@@ -1,7 +1,7 @@
-function myFunction() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
+function readMorePresentacion() {
+    var dots = document.getElementById("dotsReadMorePresentacion");
+    var moreText = document.getElementById("moreTextPresentacion");
+    var btnText = document.getElementById("btnReadMorePresentacion");
   
     if (dots.style.display === "none") {
       dots.style.display = "inline";
