@@ -1,3 +1,8 @@
+/*
+    -------------
+    Navbar inicio
+    -------------
+*/
 #moreTextPresentacion {display: none;}
 .header {
     display: flex;
@@ -18,19 +23,6 @@ nav{
     background-color: black;
 }
 
-h3{
-    margin: 3px;
-}
-
-.mostrarDescripcionItem{
-    border: none;
-    background-color: white;
-}
-ul, ol {
-    list-style-type: none;
-  }
-  
-
 .links{
     display: flex;
     flex-grow: 1;
@@ -42,13 +34,6 @@ ul, ol {
     align-items: center; 
     margin-right: auto; 
 }
-.descCarrito {
-    display: none; /* Oculta la descripción y el botón por defecto */
-  }
-  
-.mostrar {
-    display: block; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
- }
 
 .links ul {
     display: flex; 
@@ -60,8 +45,20 @@ ul, ol {
 .links ul li {
     margin-right: 20px; 
 }
+/*
+    ------------
+    Navbar Final
+    ------------
+*/
 
-.items {
+/*----------------------*/
+
+/*
+    --------------
+    Carrito Inicio
+    --------------
+*/
+.itemsCarrito {
     flex: 1;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
@@ -105,5 +102,41 @@ ul, ol {
     padding: 20px;
     margin-right: 20px;
 }
+/*
+    --------------
+    Carrito Final
+    --------------
+*/
+/*----------------------*/
+/*
+    -------------------
+    Landing Page Inicio
+    -------------------
+*/
+h3{
+    margin: 3px;
+}
+
+.mostrarDescripcionItem{
+    border: none;
+    background-color: white;
+}
+ul, ol {
+    list-style-type: none;
+  }
+  
 
 
+.descCarrito {
+    display: none; /* Oculta la descripción y el botón por defecto */
+  }
+  
+.mostrar {
+    display: block; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
+ }
+
+/*
+    ------------------
+    Landing Page Final
+    ------------------
+*/
