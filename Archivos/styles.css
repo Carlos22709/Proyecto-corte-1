@@ -58,12 +58,19 @@ nav{
     Carrito Inicio
     --------------
 */
+.resumenPago{
+    max-width: 400px;
+
+}
+
 .itemsCarrito {
     flex: 1;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
+    max-width: 643px;
+    height: 100%;
 }
 
 .resumen {
@@ -72,6 +79,7 @@ nav{
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
+    max-width: 400px;
 }
 
 .pago {
