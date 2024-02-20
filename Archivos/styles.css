@@ -142,6 +142,21 @@ nav{
     Landing Page Inicio
     -------------------
 */
+#listaItemsEntrada,
+#listaItemsPlatosPrincipales,
+#listaItemsBebidas,
+#listaItemsPostres {
+    display: none;
+}
+
+
+/*Imagenes*/
+
+.imagenesEntradas{
+    max-height: 108px;
+    aspect-ratio: 144 / 108;
+    object-fit: cover;
+}
 .presentacion{
     border-radius: 5px 5px 5px 5px;
     font-family: sans-serif;
@@ -163,6 +178,10 @@ body{
     font-style: italic;
     color: #000;
     opacity: 0.8;
+}
+
+#listaItemsEntrada li{
+    display: flex;  
 }
 
 .entradas{
@@ -213,7 +232,7 @@ ul, ol {
 }
 
 .descCarrito {
-    display: none; /* Oculta la descripción y el botón por defecto */
+    /* Oculta la descripción y el botón por defecto */
     margin-left: 20px;
   }
   

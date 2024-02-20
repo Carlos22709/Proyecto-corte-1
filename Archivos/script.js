@@ -14,13 +14,49 @@ function readMorePresentacion() {
     }
 }
 
-document.querySelectorAll('.mostrarDescripcionItem').forEach(item => {
-  item.addEventListener('click', event => {
-    let descCarrito = event.target.parentElement.nextElementSibling; // Selecciona el elemento contenedor de la descripción y el botón
-    descCarrito.classList.toggle('mostrar'); // Alterna la clase para mostrar/ocultar la descripción y el botón
-  });
+
+
+function ocultarCategoria(categoriaId) {
+  var categoria = document.getElementById(categoriaId);
+  // Ocultar la categoría al cargar la página
+  categoria.style.display = 'none';
+}
+
+// Ocultar todos los elementos de las categorías al cargar la página
+ocultarCategoria('listaItemsEntrada');
+ocultarCategoria('listaItemsPlatosPrincipales');
+ocultarCategoria('listaItemsBebidas');
+ocultarCategoria('listaItemsPostres');
+
+// Función para mostrar u ocultar los elementos de una categoría
+function toggleCategoria(categoriaId) {
+  var categoria = document.getElementById(categoriaId);
+  // Verificar si la categoría está visible o no
+  if (categoria.style.display === 'none') {
+      // Si está oculta, mostrarla
+      categoria.style.display = 'block';
+  } else {
+      // Si está visible, ocultarla
+      categoria.style.display = 'none';
+  }
+}
+
+// Agregar un evento de clic a cada botón de categoría
+document.querySelector('.entradas .mostrarCategoria').addEventListener('click', function() {
+  toggleCategoria('listaItemsEntrada');
 });
 
+document.querySelector('.platosPrincipales .mostrarCategoria').addEventListener('click', function() {
+  toggleCategoria('listaItemsPlatosPrincipales');
+});
+
+document.querySelector('.bebidas .mostrarCategoria').addEventListener('click', function() {
+  toggleCategoria('listaItemsBebidas');
+});
+
+document.querySelector('.postres .mostrarCategoria').addEventListener('click', function() {
+  toggleCategoria('listaItemsPostres');
+});
 // Menú de ejemplo con identificadores únicos para cada elemento
 const menu = [
   { id: 1, nombre: "Aros de Cebolla", precio: 5 },
