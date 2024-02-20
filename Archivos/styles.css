@@ -152,11 +152,15 @@ nav{
 
 /*Imagenes*/
 
-.imagenesEntradas{
+.imagenesPlatos{
     max-height: 108px;
     aspect-ratio: 144 / 108;
     object-fit: cover;
 }
+
+
+
+
 .presentacion{
     border-radius: 5px 5px 5px 5px;
     font-family: sans-serif;
@@ -181,6 +185,15 @@ body{
 }
 
 #listaItemsEntrada li{
+    display: flex;  
+}
+#listaItemsPlatosPrincipales li{
+    display: flex;  
+}
+#listaItemsBebidas li{
+    display: flex;  
+}
+#listaItemsPostres li{
     display: flex;  
 }
 
