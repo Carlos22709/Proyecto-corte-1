@@ -84,29 +84,37 @@ const menu = [
 ];
 
 // Función para agregar un elemento al carrito
-function agregarAlCarrito(evento) {
-  const nombreElemento = evento.target.parentElement.querySelector('.mostrarDescripcionItem').textContent.trim();
-
-  // Obtener el arreglo actual de elementos en el carrito (si existe)
-  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-  // Agregar el nuevo elemento al arreglo del carrito
+function agregarAlCarrito(nombreElemento) {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   carrito.push(nombreElemento);
-
-  // Guardar el arreglo actualizado en localStorage
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Event listener para limpiar el carrito
-document.getElementById('limpiarCarrito').addEventListener('click', limpiarCarrito);
-  
-// Función para limpiar el carrito
-function limpiarCarrito() {
-  const listaCarrito = document.getElementById('listaCarrito');
-  listaCarrito.innerHTML = ''; // Limpiar la lista de elementos del carrito
+// Función para cargar los elementos del carrito desde localStorage
+function cargarCarrito() {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const carritoList = document.getElementById('carrito_list');
+  carritoList.innerHTML = '';
+
+  carrito.forEach(item => {
+      const li = document.createElement('li');
+      li.innerText = item;
+      carritoList.appendChild(li);
+  });
 }
 
+// Event listener para cargar el carrito cuando la página se cargue
+window.addEventListener('load', () => {
+  cargarCarrito();
+});
 
+// Event listener para los botones "Añadir al carrito"
+document.querySelectorAll('.añadir-carrito').forEach(item => {
+  item.addEventListener('click', () => {
+      const nombreElemento = item.parentElement.querySelector('.mostrarDescripcionItem').textContent.trim();
+      agregarAlCarrito(nombreElemento);
+  });
+});
 /*
     --------------
     Carrito Final
