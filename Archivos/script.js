@@ -20,23 +20,25 @@ document.querySelectorAll('.mostrarDescripcionItem').forEach(item => {
     descCarrito.classList.toggle('mostrar'); // Alterna la clase para mostrar/ocultar la descripción y el botón
   });
 });
-
-// Agregamos un event listener a todos los botones "Añadir al carrito"
-document.querySelectorAll('.añadir-carrito').forEach(item => {
-  item.addEventListener('click', agregarAlCarrito);
+// Agregar event listener al contenedor de los botones "Añadir al carrito"
+document.querySelector('.menu').addEventListener('click', function(evento) {
+  if (evento.target && evento.target.matches('.añadir-carrito')) {
+      agregarAlCarrito(evento);
+  }
 });
 
 // Función para agregar un elemento al carrito
 function agregarAlCarrito(evento) {
   const nombreElemento = evento.target.parentElement.querySelector('.mostrarDescripcionItem').textContent.trim();
-  const listaCarrito = document.getElementById('listaCarrito');
-  
-  // Crear un nuevo elemento de lista y agregar el nombre del elemento
-  const nuevoElementoLista = document.createElement('li');
-  nuevoElementoLista.textContent = nombreElemento;
-  
-  // Agregar el nuevo elemento a la lista del carrito
-  listaCarrito.appendChild(nuevoElementoLista);
+
+  // Obtener el arreglo actual de elementos en el carrito (si existe)
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Agregar el nuevo elemento al arreglo del carrito
+  carrito.push(nombreElemento);
+
+  // Guardar el arreglo actualizado en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 // Event listener para limpiar el carrito
@@ -47,4 +49,3 @@ function limpiarCarrito() {
   const listaCarrito = document.getElementById('listaCarrito');
   listaCarrito.innerHTML = ''; // Limpiar la lista de elementos del carrito
 }
-
