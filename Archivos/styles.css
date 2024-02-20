@@ -80,6 +80,7 @@ nav{
     padding: 20px;
     margin-right: 20px;
     max-width: 400px;
+    color: white;
 }
 
 .pago {
@@ -109,6 +110,24 @@ nav{
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
+    color:rgb(255, 162, 0);
+}
+
+.imagenpago{
+    width: 350px;
+}
+
+#total{
+    background-color: white;
+}
+
+.botonComprar{
+    padding: 10px 20px; 
+    background-color: rgb(255, 162, 0); 
+    color: black; 
+    border: black; 
+    border-radius: 5px; 
+
 }
 /*
     --------------
