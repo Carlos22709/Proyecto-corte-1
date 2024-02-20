@@ -39,7 +39,7 @@ function toggleCategoria(categoriaId) {
   // Verificar si la categoría está visible o no
   if (categoria.style.display === 'none') {
       // Si está oculta, mostrarla
-      categoria.style.display = 'block';
+      categoria.style.display = 'initial';
   } else {
       // Si está visible, ocultarla
       categoria.style.display = 'none';
