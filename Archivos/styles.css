@@ -22,6 +22,15 @@ h3{
     margin: 3px;
 }
 
+.mostrarDescripcionItem{
+    border: none;
+    background-color: white;
+}
+ul, ol {
+    list-style-type: none;
+  }
+  
+
 .links{
     display: flex;
     flex-grow: 1;
@@ -38,7 +47,7 @@ h3{
   }
   
 .mostrar {
-    display: flex; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
+    display: block; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
  }
 
 .links ul {
@@ -96,11 +105,3 @@ h3{
     padding: 20px;
     margin-right: 20px;
 }
-
-.descCarrito {
-    display: none; /* Oculta la descripción y el botón por defecto */
-  }
-  
-.mostrar {
-    display: flex; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
- }
