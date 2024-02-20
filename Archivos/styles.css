@@ -7,6 +7,10 @@ nav{
     background-color: black;
 }
 
+h3{
+    margin: 3px;
+}
+
 .links{
     display: flex;
     flex-grow: 1;
@@ -29,3 +33,11 @@ nav{
 .links ul li {
     margin-right: 20px; 
 }
+
+.descCarrito {
+    display: none; /* Oculta la descripción y el botón por defecto */
+  }
+  
+.mostrar {
+    display: flex; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
+ }

@@ -14,10 +14,12 @@ function readMorePresentacion() {
     }
 }
 
-document.querySelectorAll('.flecha').forEach(item => {
+document.querySelectorAll('.mostrarDescripcionItem').forEach(item => {
   item.addEventListener('click', event => {
-    let descripcion = event.target.parentElement.nextElementSibling; // Selecciona el elemento de la descripción
-    descripcion.style.display = descripcion.style.display === 'none' ? 'block' : 'none'; // Alterna la visibilidad
-    item.classList.toggle('rotada'); // Alterna la clase para rotar la flecha
+    let descCarrito = event.target.parentElement.nextElementSibling; // Selecciona el elemento contenedor de la descripción y el botón
+    descCarrito.classList.toggle('mostrar'); // Alterna la clase para mostrar/ocultar la descripción y el botón
   });
 });
+
+
+
