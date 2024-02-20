@@ -76,7 +76,7 @@ document.querySelector('.postres .mostrarCategoria').addEventListener('click', f
     Carrito Inicio
     --------------
 */
-// Menú de ejemplo con identificadores únicos para cada elemento
+
 const menu = [
   { id: 1, nombre: "Aros de Cebolla", precio: 5 },
   { id: 2, nombre: "Palitos de Mozzarella", precio: 6 },
