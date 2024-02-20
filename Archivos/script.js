@@ -65,44 +65,24 @@ const menu = [
 ];
 
 // Función para agregar un elemento al carrito
-function addToCart(itemId) {
-  const item = menu.find(item => item.id === itemId);
-  if (item) {
-    carrito.push(item);
-    actualizarCarrito();
-  }
+function agregarAlCarrito(evento) {
+  const nombreElemento = evento.target.parentElement.querySelector('.mostrarDescripcionItem').textContent.trim();
+
+  // Obtener el arreglo actual de elementos en el carrito (si existe)
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Agregar el nuevo elemento al arreglo del carrito
+  carrito.push(nombreElemento);
+
+  // Guardar el arreglo actualizado en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Función para actualizar la visualización del carrito
-function actualizarCarrito() {
-  const carritoElement = document.querySelector('.resumenPago .resumen');
-  carritoElement.innerHTML = ''; // Limpiar el contenido anterior
-
-  let total = 0;
-
-  carrito.forEach(item => {
-    const itemElement = document.createElement('div');
-    itemElement.textContent = `${item.nombre} - $${item.precio}`;
-    carritoElement.appendChild(itemElement);
-    total += item.precio;
-  });
-
-  // Mostrar el total
-  const totalElement = document.createElement('div');
-  totalElement.textContent = `Total: $${total}`;
-  carritoElement.appendChild(totalElement);
+// Event listener para limpiar el carrito
+document.getElementById('limpiarCarrito').addEventListener('click', limpiarCarrito);
+  
+// Función para limpiar el carrito
+function limpiarCarrito() {
+  const listaCarrito = document.getElementById('listaCarrito');
+  listaCarrito.innerHTML = ''; // Limpiar la lista de elementos del carrito
 }
-
-// Event listener para los botones "Añadir al carrito"
-document.addEventListener('DOMContentLoaded', () => {
-  const botones = document.querySelectorAll('.añadir-carrito');
-  botones.forEach(boton => {
-    boton.addEventListener('click', () => {
-      const itemId = parseInt(boton.dataset.itemId);
-      addToCart(itemId);
-    });
-  });
-});
-
-// Carrito de compras (inicialmente vacío)
-const carrito = [];
