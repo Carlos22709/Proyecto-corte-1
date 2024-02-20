@@ -1,3 +1,8 @@
+/*
+    -------------------
+    Landing Page Inicio
+    -------------------
+*/
 function readMorePresentacion() {
     var dots = document.getElementById("dotsReadMorePresentacion");
     var moreText = document.getElementById("moreTextPresentacion");
@@ -57,6 +62,20 @@ document.querySelector('.bebidas .mostrarCategoria').addEventListener('click', f
 document.querySelector('.postres .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsPostres');
 });
+/*
+    ------------------
+    Landing Page Final
+    ------------------
+*/
+
+
+
+
+/*
+    --------------
+    Carrito Inicio
+    --------------
+*/
 // Menú de ejemplo con identificadores únicos para cada elemento
 const menu = [
   { id: 1, nombre: "Aros de Cebolla", precio: 5 },
@@ -86,3 +105,10 @@ function limpiarCarrito() {
   const listaCarrito = document.getElementById('listaCarrito');
   listaCarrito.innerHTML = ''; // Limpiar la lista de elementos del carrito
 }
+
+
+/*
+    --------------
+    Carrito Final
+    --------------
+*/
