@@ -113,6 +113,13 @@ nav{
     Landing Page Inicio
     -------------------
 */
+.presentacion{
+    color:#ffd400;
+    background-color: #000000;
+}
+.decripcionPresentacion{
+    margin: 0;
+}
 h3{
     margin: 3px;
 }
@@ -121,19 +128,27 @@ h3{
     border: none;
     background-color: white;
 }
+
 ul, ol {
     list-style-type: none;
-  }
-  
-
+}
 
 .descCarrito {
     display: none; /* Oculta la descripción y el botón por defecto */
+    margin-left: 20px;
   }
   
 .mostrar {
     display: block; /* Muestra la descripción y el botón cuando la clase "mostrar" está presente */
  }
+
+ #footer{
+    width: 100%;
+    background-color: grey;
+    padding: 0;
+    margin: 0;
+ }
+ 
 
 /*
     ------------------
