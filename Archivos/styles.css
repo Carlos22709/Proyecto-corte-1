@@ -7,7 +7,7 @@
 .header {
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: white;
     padding: 10px 20px;
 }
 
@@ -122,23 +122,73 @@ nav{
     -------------------
 */
 .presentacion{
-    color:#ffd400;
-    background-color: #000000;
+    border-radius: 5px 5px 5px 5px;
+    font-family: sans-serif;
+    color:#000;
+    background-color: #ffd400;
 }
 .decripcionPresentacion{
+    padding: 10px;
     margin: 0;
 }
+body{
+    background-color: white;
+
+}
+#btnReadMorePresentacion{
+    margin: 5px;
+    border: 0;
+    background-color: transparent;
+    font-style: italic;
+    color: #000;
+    opacity: 0.8;
+}
+
+.entradas{
+    margin-bottom: 1px;
+    background-color:#ffcc99;
+    border-radius: 5px 5px 5px 5px;
+}
+.platosPrincipales{
+    margin-bottom: 1px;
+    background-color:#98fb98;
+    border-radius: 5px 5px 5px 5px;
+}
+.bebidas{
+    margin-bottom: 1px;
+    background-color:#b0e0e6;
+    border-radius: 5px 5px 5px 5px;
+}
+.postres{
+    margin-bottom: 1px;
+    background-color:#ffc0cb;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.menu ul li:first-child {
+    padding-top: 10px; /* Ajusta el valor según sea necesario */
+  }
+  
+  ul li:last-child {
+    padding-bottom: 10px; /* Ajusta el valor según sea necesario */
+  }
+
+
 h3{
     margin: 3px;
 }
 
 .mostrarDescripcionItem{
     border: none;
-    background-color: white;
+    background-color: transparent;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 ul, ol {
     list-style-type: none;
+    display: block;
 }
 
 .descCarrito {
@@ -152,7 +202,8 @@ ul, ol {
 
  #footer{
     width: 100%;
-    background-color: grey;
+    /*background-color: rgb(41, 41, 41);*/
+    color: #ffd400;
     padding: 0;
     margin: 0;
  }
