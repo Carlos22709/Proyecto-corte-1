@@ -62,6 +62,21 @@ document.querySelector('.bebidas .mostrarCategoria').addEventListener('click', f
 document.querySelector('.postres .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsPostres');
 });
+
+/*Precios*/
+
+// Selecciona todos los elementos que tienen la clase 'precio'
+var elementosPrecio = document.querySelectorAll('.precio');
+
+// Itera sobre los elementos y aplica la lógica de manejo de precios
+elementosPrecio.forEach(function(elemento) {
+    // Obtiene el precio bruto del elemento
+    var precioBruto = parseFloat(elemento.textContent);
+    // Formatea y actualiza el precio mostrado
+    elemento.textContent = precioBruto.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
+});
+
+
 /*
     ------------------
     Landing Page Final
