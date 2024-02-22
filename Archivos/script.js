@@ -3,21 +3,6 @@
     Landing Page Inicio
     -------------------
 */
-/*function readMorePresentacion() {
-    var dots = document.getElementById("dotsReadMorePresentacion");
-    var moreText = document.getElementById("moreTextPresentacion");
-    var btnText = document.getElementById("btnReadMorePresentacion");
-  
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    } else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-    }
-}*/
 
 function readMorePresentacion() {
   var dots = document.getElementById("dotsReadMorePresentacion");
@@ -43,15 +28,16 @@ function readMorePresentacion() {
       dots.style.display = "none";
       btnText.innerHTML = "Read less";
       moreText.style.display = "inline";
-      hamburguesaImg.style.aspectRatio = 225 / 350; // Alter
-      hamburguesaImg.style.minHeight = "350px"; // Altura automática para mostrar la imagen completa
-      hamburguesaImg.style.minWidth = "225px"; // Ancho automático para mantener el aspect ratio
-      hamburguesaImg.style.maxWidth = "225px"; // Ancho automático para mantener el aspect ratio
 
-      malteadaImg.style.aspectRatio = 225 / 350; // Alter
-      malteadaImg.style.minHeight = "350px"; // Ancho gener
-      malteadaImg.style.minWidth = "225px"; // Ancho automático para mantener el aspect ratio
-      malteadaImg.style.maxWidth = "225px"; // Ancho automático para mantener el aspect ratio
+      hamburguesaImg.style.aspectRatio = 225 / 350; 
+      hamburguesaImg.style.minHeight = "350px"; 
+      hamburguesaImg.style.minWidth = "225px"; 
+      hamburguesaImg.style.maxWidth = "225px"; 
+
+      malteadaImg.style.aspectRatio = 225 / 350; 
+      malteadaImg.style.minHeight = "350px"; 
+      malteadaImg.style.minWidth = "225px"; 
+      malteadaImg.style.maxWidth = "225px"; 
   }
 }
 
@@ -99,7 +85,9 @@ document.querySelector('#postres .mostrarCategoria').addEventListener('click', f
   toggleCategoria('listaItemsPostres');
 });
 
-/*Precios*/
+/*
+  Precios
+*/
 
 // Selecciona todos los elementos que tienen la clase 'precio'
 var elementosPrecio = document.querySelectorAll('.precio');
@@ -120,7 +108,7 @@ elementosPrecio.forEach(function(elemento) {
 */
 
 
-//////////////////////
+///----------------------
 // Obtén todos los botones "Agregar al carrito"
 const botonesAgregar = document.querySelectorAll('.añadir-carrito');
 
@@ -205,7 +193,6 @@ function actualizarTotal(precioProducto) {
     Carrito Inicio
     --------------  
 */
-// Función para agregar un elemento al carrito
 // Función para agregar un elemento al carrito
 function agregarAlCarrito(nombre, precio) {
   const item = { nombre: nombre, precio: precio };

@@ -56,12 +56,6 @@
     font-size: 1.1em;
     font-weight: bold;
 }
-
-
-
-  
-
-
 /*
     ------------
     Navbar Final
@@ -79,8 +73,6 @@
     max-width: 400px;
 
 }
-
-
 
 .resumen {
     flex: 1;
@@ -105,7 +97,7 @@
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
-    width: 300px; /* Ajusta el ancho del carrito según sea necesario */
+    width: 300px;
 }
 
 .main {
@@ -180,8 +172,6 @@
     flex-wrap: wrap;
     align-items: center;
 }
-
-
 /*
     --------------
     Carrito Final
@@ -264,7 +254,7 @@ html, body{
     padding: 10px;
     margin: 0;
 
-    font-family: 'Arial', sans-serif; /* Utiliza una fuente legible */
+    font-family: 'Arial', sans-serif;
     font-size: 16px; /* Tamaño de fuente */
     line-height: 1.5; /* Altura de línea para una mejor legibilidad */
     color: #333; /* Color del texto */
@@ -304,7 +294,7 @@ body{
 }
 
 .mostrarCategoria {
-    font-family: 'Hanley Pro Sans'; /* Utiliza la fuente Hanley Pro Sans */
+    font-family: 'Hanley Pro Sans'; 
     font-size: 24px; /* Tamaño de fuente */
     text-transform: uppercase; /* Convertir texto a mayúsculas */
     letter-spacing: 1px; /* Espaciado entre letras */
@@ -337,11 +327,11 @@ body{
 }
 
 .menu ul li{
-    padding: 10px; /* Ajusta el valor según sea necesario */
+    padding: 10px; 
   }
   
   ul li:last-child {
-    padding-bottom: 10px; /* Ajusta el valor según sea necesario */
+    padding-bottom: 10px;
   }
 
 
@@ -359,11 +349,9 @@ h3{
 
 ul, ol {
     list-style-type: none;
-    /* display: block; */
 }
 
 .descCarrito {
-    /* Oculta la descripción y el botón por defecto */
     margin-left: 20px;
   }
   
@@ -382,7 +370,7 @@ ul, ol {
  }
 
 #footer div {
-    max-width: 600px; /* Ajusta el ancho máximo del contenido según sea necesario */
+    max-width: 600px;
     margin: auto; /* Centra el contenido horizontalmente */
 }
  
