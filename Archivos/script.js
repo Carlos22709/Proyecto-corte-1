@@ -47,19 +47,19 @@ function toggleCategoria(categoriaId) {
 }
 
 // Agregar un evento de clic a cada botón de categoría
-document.querySelector('.entradas .mostrarCategoria').addEventListener('click', function() {
+document.querySelector('#entradas .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsEntrada');
 });
 
-document.querySelector('.platosPrincipales .mostrarCategoria').addEventListener('click', function() {
+document.querySelector('#platosPrincipales .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsPlatosPrincipales');
 });
 
-document.querySelector('.bebidas .mostrarCategoria').addEventListener('click', function() {
+document.querySelector('#bebidas .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsBebidas');
 });
 
-document.querySelector('.postres .mostrarCategoria').addEventListener('click', function() {
+document.querySelector('#postres .mostrarCategoria').addEventListener('click', function() {
   toggleCategoria('listaItemsPostres');
 });
 
