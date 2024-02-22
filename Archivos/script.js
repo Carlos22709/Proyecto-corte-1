@@ -227,10 +227,10 @@ function cargarCarrito() {
   });
 
   // Calcular y mostrar el total del carrito
-  const culo = carrito.reduce((acc, item) => acc + item.precio, 0);
+  const total = carrito.reduce((acc, item) => acc + item.precio, 0);
   const totalElement = document.getElementById('total');
   if(totalElement != null){
-    totalElement.textContent = `$${culo.toFixed(2)}`;
+    totalElement.textContent = `$${total.toFixed(2)}`;
   }
   
 }

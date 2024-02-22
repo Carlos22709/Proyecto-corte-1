@@ -19,6 +19,48 @@
     text-decoration: none; /* Quitamos subrayado del enlace */
 }
 
+.navBar{
+    display: flex;
+    flex-direction: row;
+}
+.links {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 2;
+    flex-basis: 0;
+    text-decoration: none;
+    color: #333;
+    flex-grow: 1; 
+    align-items: center; 
+    margin-right: auto; 
+}
+
+.links ul {
+    display: flex; /* Asegura que los elementos de la lista se muestren en línea */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links ul li {
+    margin-right: 20px; /* Espaciado entre los elementos de la lista */
+}
+
+.links ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento de la lista */
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: #ffd23f;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+
+
+  
+
 
 /*
     ------------
