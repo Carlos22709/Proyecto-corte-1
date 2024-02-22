@@ -503,6 +503,12 @@ ul, ol {
     background-color: #ffbd4a;
 }
 
+@media (max-width: 680px) {
+    .presentacion {
+        flex-direction: column;
+    }
+}
+
 /*
     ------------------
     Landing Page Final

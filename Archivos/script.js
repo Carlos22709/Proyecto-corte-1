@@ -248,19 +248,19 @@ document.querySelector('.botonComprar').addEventListener('click', function() {
 
   // Filtra los elementos que no deseas incluir en la lista de productos
   const productosFiltrados = [];
+
   listaProductos.forEach(producto => {
-    if (!producto.classList.contains('no-guardar')) {
-      productosFiltrados.push(producto.textContent.trim());
-    }
+    productosFiltrados.push(producto.textContent.trim());
   });
 
   console.log(productosFiltrados);
 
   // Convierte el array en una cadena de texto para incluirlo en la URL
   const listaProductosURL = encodeURIComponent(JSON.stringify(productosFiltrados));
+  
 
   // Guarda la lista de productos en la URL
-  window.history.pushState({}, '', '?productos=' + listaProductosURL);
+  window.history.pushState({}, '', '?productos=' + productosFiltrados);
 
   limpiarCarrito();
   const totalTextarea = document.getElementById('totalPrecio');
