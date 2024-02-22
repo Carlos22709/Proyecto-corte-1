@@ -38,19 +38,10 @@
 
 }
 
-.itemsCarrito {
-    flex: 1;
-    background-color:white;
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 20px;
-    max-width: 643px;
-    height: 100%;
-}
+
 
 .resumen {
     flex: 1;
-    background-color: #000000;
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
@@ -60,12 +51,15 @@
 
 .pago {
     flex: 1;
-    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
     border-radius: 10px;
     padding: 20px;
 }
 .carrito {
-    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
@@ -80,13 +74,21 @@
 }
 
 .resumen,
-.pago {
+.innerPago {
     flex: 1;
     background-color: #fff;
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
     color:rgb(255, 162, 0);
+}
+.itemsCarrito,
+.resumenPago,
+.pago{
+    min-height: 205px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .imagenpago{
@@ -107,11 +109,14 @@
 }
 
 .carritoCompras{
+    gap: 15px;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
 }
 /*
     --------------
@@ -339,11 +344,11 @@ ul, ol {
 }
 
 .itemsCarrito {
+    height: 100%;
     flex: 1;
     background-color: #f0f0f0;
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
 }
 
 .itemsCarrito h2 {
@@ -409,11 +414,7 @@ ul, ol {
     color: #333;
 }
 
-.pago {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 20px;
-}
+
 
 .pago h2 {
     font-size: 24px;
