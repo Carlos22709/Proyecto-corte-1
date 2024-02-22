@@ -129,24 +129,44 @@ botonesAgregar.forEach(boton => {
   boton.addEventListener('click', () => {
     // Obtén el nombre del producto del input oculto
     const nombreProducto = boton.parentElement.querySelector('.nombre-producto').value;
-    console.log(nombreProducto);
+    const precioProducto = boton.parentElement.querySelector('.precio-producto').value;
     // Llama a una función para agregar el nombre del producto a la lista en el otro HTML
-    agregarProductoALista(nombreProducto);
+    agregarProductoALista(nombreProducto, precioProducto);
+    actualizarTotal(precioProducto)
   });
 });
 
 
 // Función para agregar el nombre del producto a la lista en el otro HTML
-function agregarProductoALista(nombreProducto) {
+function agregarProductoALista(nombreProducto, precioProducto) {
   // Crea un nuevo elemento de lista
   const nuevoElementoLista = document.createElement('li');
-  nuevoElementoLista.textContent = nombreProducto;
+  nuevoElementoLista.textContent = nombreProducto + " " + precioProducto;
 
   // Agrega el nuevo elemento a la lista en el otro HTML
   const listaEnOtroHTML = document.getElementById('carrito_list');
   listaEnOtroHTML.appendChild(nuevoElementoLista);
   console.log(document.getElementById('carrito_list'));
 }
+
+function actualizarTotal(precioProducto) {
+  // Obtener el elemento textarea donde se muestra el total
+  const totalTextarea = document.getElementById('totalPrecio');
+  
+  // Parsear el precio actual a un número
+  let precioActual = parseFloat(totalTextarea.value);
+  
+  // Convertir el precio del producto a un número antes de sumarlo
+  let precioProductoNum = parseFloat(precioProducto);
+  
+  // Sumar el precio del producto al precio actual
+  precioActual += precioProductoNum;
+  
+  // Actualizar el valor del textarea con el nuevo total
+  totalTextarea.value = precioActual.toFixed(2); // Asegura que se muestren solo dos decimales
+}
+
+
 
 
 
