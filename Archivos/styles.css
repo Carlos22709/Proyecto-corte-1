@@ -24,12 +24,13 @@ nav{
 }
 
 .links{
+    color: #ffd400;
+    text-decoration: none;
     display: flex;
     flex-grow: 1;
     flex-shrink: 2;
     flex-basis: 0;
     font-size: 2em;
-    color: #ffd400;
     flex-grow: 1; 
     align-items: center; 
     margin-right: auto; 
@@ -323,8 +324,36 @@ ul, ol {
     padding: 0;
     margin: 0;
     margin-top: 10px;
+    justify-content: center
  }
+
+#footer div {
+    max-width: 600px; /* Ajusta el ancho máximo del contenido según sea necesario */
+    margin: auto; /* Centra el contenido horizontalmente */
+}
  
+.somos {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #BCE2E8; 
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.section-description {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
 
 /*
     ------------------
