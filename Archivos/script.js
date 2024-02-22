@@ -120,6 +120,34 @@ elementosPrecio.forEach(function(elemento) {
 */
 
 
+//////////////////////
+// Obtén todos los botones "Agregar al carrito"
+const botonesAgregar = document.querySelectorAll('.añadir-carrito');
+
+// Itera sobre cada botón y agrega un event listener
+botonesAgregar.forEach(boton => {
+  boton.addEventListener('click', () => {
+    // Obtén el nombre del producto del input oculto
+    const nombreProducto = boton.parentElement.querySelector('.nombre-producto').value;
+    console.log(nombreProducto);
+    // Llama a una función para agregar el nombre del producto a la lista en el otro HTML
+    agregarProductoALista(nombreProducto);
+  });
+});
+
+
+// Función para agregar el nombre del producto a la lista en el otro HTML
+function agregarProductoALista(nombreProducto) {
+  // Crea un nuevo elemento de lista
+  const nuevoElementoLista = document.createElement('li');
+  nuevoElementoLista.textContent = nombreProducto;
+
+  // Agrega el nuevo elemento a la lista en el otro HTML
+  const listaEnOtroHTML = document.getElementById('carrito_list');
+  listaEnOtroHTML.appendChild(nuevoElementoLista);
+  console.log(document.getElementById('carrito_list'));
+}
+
 
 
 /*
