@@ -125,47 +125,36 @@ elementosPrecio.forEach(function(elemento) {
 /*
     --------------
     Carrito Inicio
-    --------------
+    --------------  
 */
-
 const menu = [
-  { id: 1, nombre: "Aros de Cebolla", precio: 5 },
-  { id: 2, nombre: "Palitos de Mozzarella", precio: 6 },
-  { id: 3, nombre: "Ensalada Cesar", precio: 8 },
+  { id: 1, nombre: "Hamburguesa Clásica", precio: 23.000 },
+  { id: 2, nombre: "Palitos de Mozzarella", precio: 10.000 },
+  { id: 3, nombre: "Ensalada Cesar", precio: 12.000 },
 ];
 
-// Función para agregar un elemento al carrito
-function agregarAlCarrito(nombreElemento) {
-  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  carrito.push(nombreElemento);
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-}
+// Función para agregar elementos del menú dinámicamente
+function cargarMenu() {
+  const menuList = document.getElementById('menu_list');
 
-// Función para cargar los elementos del carrito desde localStorage
-function cargarCarrito() {
-  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-  const carritoList = document.getElementById('carrito_list');
-  carritoList.innerHTML = '';
-
-  carrito.forEach(item => {
+  menu.forEach(item => {
       const li = document.createElement('li');
-      li.innerText = item;
-      carritoList.appendChild(li);
+      const h3 = document.createElement('h3');
+      const button = document.createElement('button');
+
+      h3.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+      button.textContent = "Añadir al carrito";
+      button.setAttribute('onclick', `agregarAlCarrito('${item.nombre}', ${item.precio})`);
+
+      li.appendChild(h3);
+      li.appendChild(button);
+      menuList.appendChild(li);
   });
 }
 
-// Event listener para cargar el carrito cuando la página se cargue
-window.addEventListener('load', () => {
-  cargarCarrito();
-});
+// Event listener para cargar el menú cuando la página se cargue
+window.addEventListener('load', cargarMenu);
 
-// Event listener para los botones "Añadir al carrito"
-document.querySelectorAll('.añadir-carrito').forEach(item => {
-  item.addEventListener('click', () => {
-      const nombreElemento = item.parentElement.querySelector('.mostrarDescripcionItem').textContent.trim();
-      agregarAlCarrito(nombreElemento);
-  });
-});
 /*
     --------------
     Carrito Final
