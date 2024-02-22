@@ -127,33 +127,35 @@ elementosPrecio.forEach(function(elemento) {
     Carrito Inicio
     --------------  
 */
-const menu = [
-  { id: 1, nombre: "Hamburguesa Clásica", precio: 23.000 },
-  { id: 2, nombre: "Palitos de Mozzarella", precio: 10.000 },
-  { id: 3, nombre: "Ensalada Cesar", precio: 12.000 },
-];
-
-// Función para agregar elementos del menú dinámicamente
-function cargarMenu() {
-  const menuList = document.getElementById('menu_list');
-
-  menu.forEach(item => {
-      const li = document.createElement('li');
-      const h3 = document.createElement('h3');
-      const button = document.createElement('button');
-
-      h3.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
-      button.textContent = "Añadir al carrito";
-      button.setAttribute('onclick', `agregarAlCarrito('${item.nombre}', ${item.precio})`);
-
-      li.appendChild(h3);
-      li.appendChild(button);
-      menuList.appendChild(li);
-  });
+// Función para agregar un elemento al carrito
+// Función para agregar un elemento al carrito
+function agregarAlCarrito(nombre, precio) {
+  const item = { nombre: nombre, precio: precio };
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  carrito.push(item);
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  alert(`${nombre} ha sido agregado al carrito.`);
 }
 
-// Event listener para cargar el menú cuando la página se cargue
-window.addEventListener('load', cargarMenu);
+function cargarCarrito() {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const carritoList = document.getElementById('carrito_list');
+  carritoList.innerHTML = '';
+
+  carrito.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - $${item.precio.toFixed(2)}`;
+      carritoList.appendChild(li);
+  });
+
+  // Calcular y mostrar el total del carrito
+  const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+  const totalElement = document.getElementById('total');
+  totalElement.textContent = `$${total.toFixed(2)}`;
+}
+
+// Event listener para cargar el carrito cuando la página se cargue
+window.addEventListener('load', cargarCarrito);
 
 /*
     --------------
