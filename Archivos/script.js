@@ -124,6 +124,7 @@ elementosPrecio.forEach(function(elemento) {
 // Obtén todos los botones "Agregar al carrito"
 const botonesAgregar = document.querySelectorAll('.añadir-carrito');
 
+
 // Itera sobre cada botón y agrega un event listener
 botonesAgregar.forEach(boton => {
   boton.addEventListener('click', () => {
@@ -146,6 +147,7 @@ function agregarProductoALista(nombreProducto, precioProducto) {
   const botonEliminar = document.createElement('button');
   botonEliminar.textContent = 'Eliminar';
   botonEliminar.classList.add('eliminar-item');
+
   botonEliminar.addEventListener('click', function() {
     this.parentElement.remove(); // Elimina el elemento de lista al hacer clic en el botón de eliminar
     precioProducto *= -1;
@@ -210,9 +212,12 @@ function cargarCarrito() {
   });
 
   // Calcular y mostrar el total del carrito
-  const total = carrito.reduce((acc, item) => acc + item.precio, 0);
+  const culo = carrito.reduce((acc, item) => acc + item.precio, 0);
   const totalElement = document.getElementById('total');
-  totalElement.textContent = `$${total.toFixed(2)}`;
+  if(totalElement != null){
+    totalElement.textContent = `$${culo.toFixed(2)}`;
+  }
+  
 }
 
 // Event listener para cargar el carrito cuando la página se cargue
@@ -221,7 +226,10 @@ window.addEventListener('load', cargarCarrito);
 function limpiarCarrito() {
   localStorage.removeItem('carrito');
   cargarCarrito();
+  const totalTextarea = document.getElementById('totalPrecio');
+  totalTextarea.value = 0;
 }
+
 
 
 // Event listener para cargar el carrito cuando la página se cargue
@@ -233,6 +241,7 @@ document.getElementById('limpiarCarrito').addEventListener('click', limpiarCarri
 document.querySelector('.botonComprar').addEventListener('click', function() {
   // Obtiene la lista de productos del carrito
   const listaProductos = document.querySelectorAll('#carrito_list li');
+  console.log(listaProductos);
 
   // Filtra los elementos que no deseas incluir en la lista de productos
   const productosFiltrados = [];
@@ -241,6 +250,8 @@ document.querySelector('.botonComprar').addEventListener('click', function() {
       productosFiltrados.push(producto.textContent.trim());
     }
   });
+
+  console.log(productosFiltrados);
 
   // Convierte el array en una cadena de texto para incluirlo en la URL
   const listaProductosURL = encodeURIComponent(JSON.stringify(productosFiltrados));

@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: space-between; /* Añadido para centrar el contenido horizontalmente */
     background-color: #fff; /* Fondo blanco */
-    padding: 20px; /* Espaciado interno */
+    padding: 0px; /* Espaciado interno */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
