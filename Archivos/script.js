@@ -241,6 +241,7 @@ window.addEventListener('load', cargarCarrito);
 function limpiarCarrito() {
   localStorage.removeItem('carrito');
   cargarCarrito();
+  precioTotal = 0;
   const totalTextarea = document.getElementById('totalPrecio');
   totalTextarea.value = 0;
 }
