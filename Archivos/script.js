@@ -223,11 +223,38 @@ function limpiarCarrito() {
   cargarCarrito();
 }
 
+
 // Event listener para cargar el carrito cuando la página se cargue
 window.addEventListener('load', cargarCarrito);
 
 // Event listener para limpiar el carrito cuando se haga clic en el botón
 document.getElementById('limpiarCarrito').addEventListener('click', limpiarCarrito);
+
+document.querySelector('.botonComprar').addEventListener('click', function() {
+  // Obtiene la lista de productos del carrito
+  const listaProductos = document.querySelectorAll('#carrito_list li');
+
+  // Filtra los elementos que no deseas incluir en la lista de productos
+  const productosFiltrados = [];
+  listaProductos.forEach(producto => {
+    if (!producto.classList.contains('no-guardar')) {
+      productosFiltrados.push(producto.textContent.trim());
+    }
+  });
+
+  // Convierte el array en una cadena de texto para incluirlo en la URL
+  const listaProductosURL = encodeURIComponent(JSON.stringify(productosFiltrados));
+
+  // Guarda la lista de productos en la URL
+  window.history.pushState({}, '', '?productos=' + listaProductosURL);
+
+  limpiarCarrito();
+  const totalTextarea = document.getElementById('totalPrecio');
+  totalTextarea.value = 0;
+  
+  // Muestra un mensaje de confirmación
+  alert('Comprados Con Exito');
+});
 
 /*
     --------------
