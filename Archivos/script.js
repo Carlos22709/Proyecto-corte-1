@@ -141,13 +141,26 @@ botonesAgregar.forEach(boton => {
 function agregarProductoALista(nombreProducto, precioProducto) {
   // Crea un nuevo elemento de lista
   const nuevoElementoLista = document.createElement('li');
-  nuevoElementoLista.textContent = nombreProducto + " " + precioProducto;
+
+  // Crea un elemento de botón para el botón de eliminar
+  const botonEliminar = document.createElement('button');
+  botonEliminar.textContent = 'Eliminar';
+  botonEliminar.classList.add('eliminar-item');
+  botonEliminar.addEventListener('click', function() {
+    this.parentElement.remove(); // Elimina el elemento de lista al hacer clic en el botón de eliminar
+    precioProducto *= -1;
+    actualizarTotal(precioProducto)
+  });
+
+  // Agrega el nombre del producto, el precio y el botón de eliminar al nuevo elemento de lista
+  nuevoElementoLista.textContent = nombreProducto + " - " + precioProducto;
+  nuevoElementoLista.appendChild(botonEliminar);
 
   // Agrega el nuevo elemento a la lista en el otro HTML
   const listaEnOtroHTML = document.getElementById('carrito_list');
   listaEnOtroHTML.appendChild(nuevoElementoLista);
-  console.log(document.getElementById('carrito_list'));
 }
+
 
 function actualizarTotal(precioProducto) {
   // Obtener el elemento textarea donde se muestra el total
