@@ -130,7 +130,8 @@ botonesAgregar.forEach(boton => {
   boton.addEventListener('click', () => {
     // Obtén el nombre del producto del input oculto
     const nombreProducto = boton.parentElement.querySelector('.nombre-producto').value;
-    const precioProducto = boton.parentElement.querySelector('.precio-producto').value;
+    const precioProducto = parseFloat(boton.parentElement.querySelector('.precio-producto').value);
+    
     // Llama a una función para agregar el nombre del producto a la lista en el otro HTML
     agregarProductoALista(nombreProducto, precioProducto);
     actualizarTotal(precioProducto)
@@ -142,6 +143,7 @@ botonesAgregar.forEach(boton => {
 function agregarProductoALista(nombreProducto, precioProducto) {
   // Crea un nuevo elemento de lista
   const nuevoElementoLista = document.createElement('li');
+  nuevoElementoLista.classList.add('item-lista');
 
   // Crea un elemento de botón para el botón de eliminar
   const botonEliminar = document.createElement('button');
@@ -154,8 +156,13 @@ function agregarProductoALista(nombreProducto, precioProducto) {
     actualizarTotal(precioProducto)
   });
 
+  const precioFormateado = precioProducto.toLocaleString('es-CO', {
+    style: 'currency',
+    currency: 'COP'
+  });
+
   // Agrega el nombre del producto, el precio y el botón de eliminar al nuevo elemento de lista
-  nuevoElementoLista.textContent = nombreProducto + " - " + precioProducto;
+  nuevoElementoLista.textContent = nombreProducto + " - " + precioFormateado;
   nuevoElementoLista.appendChild(botonEliminar);
 
   // Agrega el nuevo elemento a la lista en el otro HTML
@@ -164,22 +171,30 @@ function agregarProductoALista(nombreProducto, precioProducto) {
 }
 
 
+// Variable para almacenar el precio total
+let precioTotal = 0;
+
+// Función para actualizar el precio total
 function actualizarTotal(precioProducto) {
-  // Obtener el elemento textarea donde se muestra el total
-  const totalTextarea = document.getElementById('totalPrecio');
-  
-  // Parsear el precio actual a un número
-  let precioActual = parseFloat(totalTextarea.value);
-  
   // Convertir el precio del producto a un número antes de sumarlo
   let precioProductoNum = parseFloat(precioProducto);
   
-  // Sumar el precio del producto al precio actual
-  precioActual += precioProductoNum;
+  // Sumar el precio del producto al precio total
+  precioTotal += precioProductoNum;
+
+  const precioFormateado = precioTotal.toLocaleString('es-CO', {
+    style: 'currency',
+    currency: 'COP'
+  });
+  
+  // Obtener el elemento textarea donde se muestra el total
+  const totalTextarea = document.getElementById('totalPrecio');
   
   // Actualizar el valor del textarea con el nuevo total
-  totalTextarea.value = precioActual.toFixed(2); // Asegura que se muestren solo dos decimales
+  totalTextarea.value = precioFormateado; // Asegura que se muestren solo dos decimales
 }
+
+
 
 
 

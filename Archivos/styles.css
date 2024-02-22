@@ -118,6 +118,28 @@
     flex-wrap: wrap;
     margin-top: 10px;
 }
+
+#totalPrecio{
+    resize: none;
+    height: 1rem;
+    text-align: right;
+}
+
+#totalTituloValor{
+    display: flex;
+
+}
+
+.item-lista{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
 /*
     --------------
     Carrito Final
