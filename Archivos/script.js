@@ -205,6 +205,17 @@ function cargarCarrito() {
 // Event listener para cargar el carrito cuando la página se cargue
 window.addEventListener('load', cargarCarrito);
 
+function limpiarCarrito() {
+  localStorage.removeItem('carrito');
+  cargarCarrito();
+}
+
+// Event listener para cargar el carrito cuando la página se cargue
+window.addEventListener('load', cargarCarrito);
+
+// Event listener para limpiar el carrito cuando se haga clic en el botón
+document.getElementById('limpiarCarrito').addEventListener('click', limpiarCarrito);
+
 /*
     --------------
     Carrito Final
